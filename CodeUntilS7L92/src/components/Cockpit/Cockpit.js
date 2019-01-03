@@ -3,7 +3,7 @@ import React from 'react';
 import classes from './Cockpit.css';
 import Aux from '../../hoc/Auxillary';
 
-const cockpit = (props) => {
+const cockpit = ( props ) => {
   const assignedClasses = [];
   let btnClass = classes.Button;
 
@@ -25,8 +25,9 @@ const cockpit = (props) => {
       <button 
         className={btnClass}
         onClick={props.clicked}>Toggle Persons</button>
+      <button onClick={props.login} >Log in</button>
     </Aux>
   );
 };
 
-export default cockpit;
+export default React.memo(cockpit);
