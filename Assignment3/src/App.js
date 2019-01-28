@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Route, NavLink } from 'react-router-dom';
 
 import Courses from './containers/Courses/Courses';
 import Users from './containers/Users/Users';
 
 class App extends Component {
   render () {
-    return (
+    return ( //finished task 2
       <div className="App">
         <ol style={{textAlign: 'left'}}>
           <li>Add Routes to load "Users" and "Courses" on different pages (by entering a URL, without Links)</li>
@@ -17,7 +18,24 @@ class App extends Component {
           <li>Add a 404 error page and render it for any unknown routes</li>
           <li>Redirect requests to /all-courses to /courses (=> Your "Courses" page)</li>
         </ol>
+        <nav>
+          <ul style={{listStyle: 'none', margin: 'auto', padding: '0'}}>
+            <li style={{margin: '10px', display: 'inline-block'}}>
+              <NavLink to="/courses">Courses</NavLink>
+            </li>
+            <li style={{margin: '10px', display: 'inline-block'}}>
+              <NavLink to="/users">Users</NavLink>
+            </li>
+          </ul>
+        </nav>
+        <Route path="/courses" component={Courses}/>
+        <Route path="/users" component={Users}/>
       </div>
+            // <header>
+            //   <nav>
+            //     
+            //   </nav>
+            // </header>
     );
   }
 }
